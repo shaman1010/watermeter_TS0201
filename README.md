@@ -1,11 +1,12 @@
-# Watermeter Zigbee Telink TLSR8258 (E-BYTE E180-Z5812SP)
+# Watermeter Zigbee Telink TLSR8258 (TS0201)
 
-[Repository watermeter_zed](https://github.com/slacky1965/watermeter_zed)
+[Repository watermeter_TS0201](https://github.com/shaman1010/watermeter_TS0201)
 
 ---
 
 ## Описание
-
+* Форк с https://github.com/slacky1965/watermeter_zed
+* Адаптировано под использование https://github.com/pvvx/BLE_THSensor
 * Рассчитано на два счетчика воды.
 * Не работает с системой namur и счетчиками, где применен датчик "холла". Только замыкание-размыкание, например геркон.
 * Ведет подсчет замыканий-размыканий, увеличивая каждый раз количество литров на заданное значение от 1 до 10 литров (по умолчанию 10 литров на один импульс).
@@ -19,80 +20,14 @@
 
 ---
 
-## Железо
-
-В проекте используется модуль от компании E-BYTE на чипе TLSR8258F512ET32 - E180-Z5812SP.
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/E180-Z5812SP.jpg" alt="E-BYTE E180-Z5812SP"/>
-
-Испытывалось все на вот таком dongle от Telink
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/telink_tlsr8258_dongle.jpg" alt="Telink TLSR8258 dongle"/>
-
----
-
-## Корпус
-
-Корпус взят от Battery Holder Box на 3 батарейки АА. Переделываем на 2 батарейки и получаем питание 3 вольта и один сегмент под плату.
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/box/box1.jpg" alt="BOX 3AA"/>
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/box/box2.jpg" alt="BOX 3AA"/>
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/box/box3.jpg" alt="BOX 3AA"/>
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/box/box4.jpg" alt="BOX 3AA"/>
-
----
-
-## Схема
-
-Схема модуля.
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/schematic_watermeter_zed.jpg" alt="schematic"/>
-
----
-
-## Плата
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/board_top.jpg" alt="Board top"/>
-
-[Ссылка на проект в easyeda](https://oshwlab.com/slacky/watermeter_zed)
-
-На гребенку выведены следующие пины модуля
-
-* SWS, GND - для заливки в модуль прошивки
-* VCC, RST, TX, RX - на всякий случай, вдруг кому-то пригодится.
-
-Если кто-то будет повторять, сдвиньте кнопку немного вглубь. Корпус кнопки немного выходит за габаритты платы. Ничего криминального, страдает только эстетика.
-
----
-
 ## Готовое устройство
 
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/watermeter_board_top.jpg" alt="Watermeter board top"/>
-
-На схеме конденсатор C1 - танталовый электролит Case B. Но более грамотные люди, чем я, посоветовали не ставить его, так как у танталовых электролитов больший ток утечки, чем у керамических. Керамический неполярный конденсатор в этом плане выигрывает. В готовом устройстве применен именно керамический конденсатор размера 1206. Посадочное место позволяет такую замену.
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/device_open_box.jpg" alt="Watermeter open box"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/device_open_box2.jpg" alt="Watermeter open box 2"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/device_close_box.jpg" alt="Watermeter close box"/>
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/device_front.jpg" alt="Watermeter front"/>
-
-
+Используется готовый градусник от Tuya - TS0201
 ---
 
 ## Софт
 
-[Последнюю прошивку](https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/watermeter_zed_V1.3.04.bin) нужно залить в модуль с помощью [github.com/pvvx/TLSRPGM](https://github.com/pvvx/TLSRPGM) или оригинального программатора от Telink.
-
-<img src="https://raw.githubusercontent.com/slacky1965/watermeter_zed/main/doc/images/telink_pgm.jpg" alt="Telink PGM"/>
-
-Как сделать недорогой программатор на базе модулей TB-03 или TB-04 можно почитать [тут](https://slacky1965.github.io/electricity_meter_zrd/#%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D1%88%D0%B8%D0%B2%D0%BA%D0%B8)
-
-Используется последнее [SDK zigbee](http://wiki.telink-semi.cn/tools_and_sdk/Zigbee/Zigbee_SDK.zip) от Telink'а. Проект сформирован таким образом, что его можно собрать обычным make'ом как под Windows, в оболочке [Git Bash](https://git-scm.com/download/win), а также под Linux'ом (я проверял на Debian 11).
-
-Как добавить проект в Eclipse можно почитать [тут](https://slacky1965.github.io/electricity_meter_zrd/#%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F). Все точно так же, только для другого проекта.
+[Последнюю прошивку](https://raw.githubusercontent.com/shaman1010/watermeter_TS0201/main/watermeter_TS0201_V1.3.04.bin) нужно залить в модуль с помощью [github.com/pvvx/TLSRPGM](https://github.com/pvvx/TLSRPGM) или оригинального программатора от Telink.
 
 Прошивка собрана по схеме, т.е. подключается файл платы `board_8258_diy.h`. Еще адаптирована плата dongle, т.е. `board_8258_dongle.h`. Для других вариантов придется самостоятельно редактировать файл нужной платы.
 
@@ -303,29 +238,6 @@
 
 ---
 
-## Стоимость
-
-Стоимость основных деталей на октябрь-ноябрь 2023 года в России.
-
-* Плата 50 шт. - 2448 р. (Aliexpress)
-* Модуль E-BYTE E180-Z5812SP - 300 р. (Aliexpress)
-* Корпус - 150 р. (Aliexpress)
-* Клемник - 35 р. (Aliexpress)
-* Кнопка - 3 р. (Aliexpress)
-* Светодиод - 12 р. (Chipdip)
-* Пара конденсаторов и сопротивление - 200 р.
-
-## TODO
-- ~~Сделать светодиодную индикацию режимов работы модуля.~~ Сделано.
-- ~~Сделать DEEP SLEEP, если модуль не в сети более 30 минут.~~ Сделано.
-- ~~Сделать сброс OTA, если обновление завершилось ошибкой, чтобы не зависеть от действий пользователя.~~ Сделано.
-
 ## История версий
 
-- 1.0    - Начало.
-- 1.1    - Прошивка без ОТА. 
-- 1.2    - Добавлена возможность обновления OTA.
-- 1.3.01 - Изменена нумерация версий. Добавлены светодиодная индикация режимов модуля; глубокий сон, если не в сети более 30 минут; сброс OTA, если обновление прошло с ошибкой, обновление начнется с начала, сделано чтобы не потерять основной конфиг.
-- 1.3.02 - Изменен адрес записи промежуточного конфига при OTA. Раньше он записывался по адресу 0x74000, теперь он пишется в nv_ram в модуль NV_MODULE_APP с номером NV_ITEM_APP_USER_CFG (см. app_cfg.h).
-- 1.3.03 - Устранен небольшой глюк с репортингом.
-- 1.3.04 - Изменен MANUFACTURER_CODE на кастомный. Добавлена проверка разряда батарейки при обновлении OTA.
+- 1.3.04 - forked.
