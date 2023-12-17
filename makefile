@@ -1,10 +1,10 @@
 # Set Project Name
-PROJECT_NAME := watermeter_zed
+PROJECT_NAME := watermeter_TS0201
 
 # Set the serial port number for downloading the firmware
-DOWNLOAD_PORT := COM3
+DOWNLOAD_PORT := COM63
 
-COMPILE_PREFIX = C:/TelinkSDK/opt/tc32/bin/tc32
+COMPILE_PREFIX = ~/watermeter_zed/tl_zigbee_sdk/tools/linux/tc32/bin/tc32
 
 AS      = $(COMPILE_PREFIX)-elf-as
 CC      = $(COMPILE_PREFIX)-elf-gcc

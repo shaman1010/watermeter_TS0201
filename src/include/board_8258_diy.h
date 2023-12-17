@@ -2,12 +2,12 @@
 #define SRC_INCLUDE_BOARD_8258_DIY_H_
 
 /************************* Configure KEY GPIO ***************************************/
-#define BUTTON                  GPIO_PB6
-#define PB6_INPUT_ENABLE        ON
-#define PB6_DATA_OUT            OFF
-#define PB6_OUTPUT_ENABLE       OFF
-#define PB6_FUNC                AS_GPIO
-#define PULL_WAKEUP_SRC_PB6     PM_PIN_PULLUP_1M
+#define BUTTON                  GPIO_PC0
+#define PC0_INPUT_ENABLE        ON
+#define PC0_DATA_OUT            OFF
+#define PC0_OUTPUT_ENABLE       OFF
+#define PC0_FUNC                AS_GPIO
+#define PULL_WAKEUP_SRC_PC0     PM_PIN_PULLUP_1M
 
 #define PM_WAKEUP_LEVEL         PM_WAKEUP_LEVEL_LOW // only for KEY
 
@@ -24,12 +24,12 @@
 #define PULL_WAKEUP_SRC_PB7     PM_PIN_PULLUP_1M
 
 /************************* Configure COLD GPIO **************************************/
-#define COLD_GPIO               GPIO_PB4
-#define PB4_INPUT_ENABLE        ON
-#define PB4_DATA_OUT            OFF
-#define PB4_OUTPUT_ENABLE       OFF
-#define PB4_FUNC                AS_GPIO
-#define PULL_WAKEUP_SRC_PB4     PM_PIN_PULLUP_1M
+#define COLD_GPIO               GPIO_PB1
+#define PB1_INPUT_ENABLE        ON
+#define PB1_DATA_OUT            OFF
+#define PB1_OUTPUT_ENABLE       OFF
+#define PB1_FUNC                AS_GPIO
+#define PULL_WAKEUP_SRC_PB1     PM_PIN_PULLUP_1M
 
 /**************************** Configure UART ***************************************
 *    UART_TX_PA2 = GPIO_PA2,
@@ -53,10 +53,10 @@
 
 /**************************** Configure LED ******************************************/
 
-#define LED1                        GPIO_PB1
-#define PB1_FUNC                    AS_GPIO
-#define PB1_OUTPUT_ENABLE           ON
-#define PB1_INPUT_ENABLE            OFF
+#define LED1                        GPIO_PB4
+#define PB4_FUNC                    AS_GPIO
+#define PB4_OUTPUT_ENABLE           ON
+#define PB4_INPUT_ENABLE            OFF
 
 
 ///************************* For 512K Flash only ***************************************/
