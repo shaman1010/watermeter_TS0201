@@ -1,10 +1,10 @@
 [
     {
-        "fileVersion": 318976001,
-        "fileSize": 148370,
+        "fileVersion": 13043001,
+        "fileSize": 145842,
         "manufacturerCode": 4417,
         "imageType": 516,
-        "sha512": "66e4eaeda183b16d10ff1c5a200d86dcb03fdf6f59828d6c11538f439bb66fa1f91bf064d764d1335b63421f4ee9e90816859857864ef7b614b8a13cf14a9369",
-        "url": "https://github.com/slacky1965/watermeter_zed/raw/main/1141-0204-13033001-watermeter_zed_V1.3.03.zigbee"
+        "sha256": "394753409B9B57B8D160AC93B2FDB844E06734E4E9F690A262CE9CD53CBBB3BA",
+        "url": "https://github.com/shaman1010/watermeter_TS0201/raw/main/6565-0204-13043001-watermeter_TS0201.zigbee"
     }
 ]
