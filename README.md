@@ -29,7 +29,7 @@
 
 ## Софт
 
-[Последнюю прошивку](https://raw.githubusercontent.com/shaman1010/watermeter_TS0201/main/watermeter_TS0201_V1.3.04.bin) нужно залить в модуль с помощью [Самого простого программатора в Chrome](https://pvvx.github.io/ATC_MiThermometer/USBCOMFlashTx.html), либо [github.com/pvvx/TLSRPGM](https://github.com/pvvx/TLSRPGM) либо оригинального программатора от Telink.
+[Последнюю прошивку](https://raw.githubusercontent.com/shaman1010/watermeter_TS0201/main/watermeter_TS0201_V1.3.04.bin) нужно залить в модуль с помощью [USBCOMFlashTx в Chrome](https://pvvx.github.io/ATC_MiThermometer/USBCOMFlashTx.html), либо [github.com/pvvx/TLSRPGM](https://github.com/pvvx/TLSRPGM) либо оригинального программатора от Telink.
 
 Самое простое подключение - указано на фото. Справа обозначены контакты, к которым нужно подключиться на USB-UART переходник. Работают не все переходники, но китайские CH340, CH9340 и подобные - работают.
 Подробнее о подключении можно почитать [Там же, у pvvx-а](https://github.com/pvvx/BLE_THSensor/tree/master)
